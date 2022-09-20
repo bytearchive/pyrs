@@ -130,6 +130,7 @@ class RustTranspiler(CLikeTranspiler):
             args += [self.visit(kw.value) for kw in node.keywords]
         
         if args:
+            args = [x for x in args if x != None]
             args = ", ".join(args)
         else:
             args = ''
